@@ -16,8 +16,8 @@ ez = np.zeros(SPACE+1)
 hy = np.zeros(SPACE)
 
 
+# doing FDTD#
 
-# doing FDTD
 for time in range(tSIZE):
     
     for mm in range(SPACE-1):
@@ -30,13 +30,13 @@ for time in range(tSIZE):
     
 
     
-# for plot, make the boundary value at 800 time become 0
+# for plot, make the boundary value at 800 time become 0#
+
 for z in range(1,SPACE): 
     ez_value[tSIZE-1][z] = 0
 
-
-zs = np.arange(0.0, float(tSIZE), 10.0)
 # Attract the data 20 unit of space per step# 
+zs = np.arange(0.0, float(tSIZE), 10.0)
 xs = np.arange(0.0,float(SPACE))  
 verts = []
 
