@@ -1,23 +1,24 @@
 # FDTD-1D-Gaussian_Additive-Source_Waterfall-Plot
-
+```python
 import matplotlib as mpl
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection
 from matplotlib.colors import colorConverter
-
-
+```
+```python
 imp0 = 377.0
 tSIZE = 600
 SPACE = 300
 ez_value = np.zeros((800,300))
 ez = np.zeros(SPACE+1)
 hy = np.zeros(SPACE)
-
+```
 
 # doing FDTD#
 
+```python
 for time in range(tSIZE):
     
     for mm in range(SPACE-1):
@@ -27,15 +28,16 @@ for time in range(tSIZE):
     ez[100] += 5*np.exp(-(time -40.0)**2/100.0)
     for z in range(SPACE-1):
         ez_value[time][z]=ez[z]    
-    
+  ```  
 
     
 # for plot, make the boundary value at 800 time become 0#
-
+```python
 for z in range(1,SPACE): 
     ez_value[tSIZE-1][z] = 0
-
+```
 # Attract the data 20 unit of space per step# 
+```python
 zs = np.arange(0.0, float(tSIZE), 10.0)
 xs = np.arange(0.0,float(SPACE))  
 verts = []
@@ -64,3 +66,4 @@ ax.set_ylim(0,tSIZE+1)
 ax.set_zlim(-5,5)
                       
 plt.show()
+```
